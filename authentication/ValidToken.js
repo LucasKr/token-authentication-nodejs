@@ -1,6 +1,6 @@
 exports.authorized = function ensureAuthorized(req, res, next) {
   var bearerToken;
-  var bearerHeader = req.headers["authorization"];
+  var bearerHeader = req.headers.authorization;
   if (typeof bearerHeader !== 'undefined') {
     var bearer = bearerHeader.split(" ");
     bearerToken = bearer[1];
@@ -9,4 +9,4 @@ exports.authorized = function ensureAuthorized(req, res, next) {
   } else {
     res.send(403);
   }
-}
+};
